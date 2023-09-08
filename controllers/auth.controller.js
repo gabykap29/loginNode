@@ -4,12 +4,12 @@ import {generateJWT} from '../helpers/generateJWT.js';
 const authCtrl = {};
 
 authCtrl.login = async (req,res)=>{
-    const {username,pass} = req.body;
+    const {email,pass} = req.body;
 
     try {
         const user = await User.findOne({
             where:{
-                username:username
+                email:email
             }
         });
         if(!user){

@@ -4,13 +4,13 @@ import User from '../models/Users.js';
 const crtlUsers = {};
 //crear un usuario
 crtlUsers.create = async (req,res)=>{
-    const { name, lastname,username, pass} = req.body;
+    const { name, lastname,email, pass} = req.body;
     //primero, busca si el usuario no esta existente en la base de datos
     try {
         
         const userExist = await User.findOne({
             where:{
-                username,
+                email,
             },
         });
         //si existe, devuelve un error 400
@@ -27,7 +27,7 @@ crtlUsers.create = async (req,res)=>{
         const newUser = await User.create({
             lastname,
             name,
-            username,
+            email,
             pass: encriptpass,
         });
         if(!newUser){
@@ -97,7 +97,7 @@ crtlUsers.findAll = async(req,res)=>{
 //actualizar un usuario
 crtlUsers.updateOne = async(req,res)=>{
     const {id}=req.params;
-    const {lastname,name,username,pass} = req.body;
+    const {lastname,name,email,pass} = req.body;
 
     //si el usuario quiere actualizar su contraseña
     let passEncript;
@@ -110,7 +110,7 @@ crtlUsers.updateOne = async(req,res)=>{
         const userUpdate =  await User.update({
             lastname,
             name,
-            username,
+            email,
             pass:  passEncript,
         },{
             where:{
