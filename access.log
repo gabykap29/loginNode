@@ -1,2 +1,6 @@
 ::1 - - [08/Sep/2023:17:53:09 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36 Edg/116.0.1938.69"
 ::1 - - [08/Sep/2023:17:53:09 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36 Edg/116.0.1938.69"
+::ffff:127.0.0.1 - - [08/Sep/2023:18:48:58 +0000] "POST /api/register HTTP/1.1" 201 241 "-" "Thunder Client (https://www.thunderclient.com)"
+::ffff:127.0.0.1 - - [08/Sep/2023:18:49:20 +0000] "POST /api/login HTTP/1.1" 500 40 "-" "Thunder Client (https://www.thunderclient.com)"
+::ffff:127.0.0.1 - - [08/Sep/2023:18:49:51 +0000] "POST /api/login HTTP/1.1" 500 40 "-" "Thunder Client (https://www.thunderclient.com)"
+::ffff:127.0.0.1 - - [08/Sep/2023:18:50:26 +0000] "POST /api/login HTTP/1.1" 200 195 "-" "Thunder Client (https://www.thunderclient.com)"

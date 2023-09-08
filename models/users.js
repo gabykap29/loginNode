@@ -1,6 +1,12 @@
 //importar SEQUELIZE desde el archivo db de la conexión
 import { DataTypes, Model } from "sequelize";
 import { sequelize } from "../db/db.js";
+
+//roles
+export const role = {
+    ADMIN:'admin',
+    USER: 'user'
+} 
 ///modelo de usuarios
 const User =  sequelize.define('User',{
     idUser:{
@@ -24,6 +30,10 @@ const User =  sequelize.define('User',{
     pass:{
         type:DataTypes.STRING,
         allowNull:false,
+    },
+    rol:{
+        type:DataTypes.ENUM(role.ADMIN,role.USER),
+        defaultValue: role.USER
     },
     state:{
         type: DataTypes.BOOLEAN, 
